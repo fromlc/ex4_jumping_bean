@@ -10,45 +10,40 @@
 using namespace std;
 
 //------------------------------------------------------------------------------
-// constants
-//------------------------------------------------------------------------------
-constexpr int NUMBER_OF_JUMPS = 10; // adjust constant as needed
-
-//------------------------------------------------------------------------------
 // entry point
 //------------------------------------------------------------------------------
-int main() {
+int main()
+{
     int jump_min, jump_max;         // set to user input
+    int number_of_jumps;            // set to user input
 
     // app banner
     cout << "\nJumping Bean!\n";
 
-    // prompt for highest possible jump
-    cout << "\nWhat's the highest the Bean can jump in inches? (0 quits) ";
-    cin >> jump_max;
-
-    // continue unless user wants to quit
-    if (jump_max > 0)
+    // prompt for number of times to jump
+    cout << "\nHow many times will the Bean jump? (0 quits) ";
+    cin >> number_of_jumps;
+    if (number_of_jumps > 0)
     {
+        // prompt for highest possible jump
+        cout << "\nWhat's the highest the Bean can jump in inches? (0 quits) ";
+        cin >> jump_max;
+
         // prompt for lowest possible jump
         cout << "What's the smallest jump possible for the Bean in inches? (0 quits) ";
         cin >> jump_min;
 
-        // continue unless user wants to quit
-        if (jump_min > 0)
+        // loop to jump constant times
+        for (int i = 0; i < number_of_jumps; i++)
         {
-            // loop to jump constant times
-            for (int i = 0; i < NUMBER_OF_JUMPS; i++)
-            {
-                // calculate random jump height
-                int jump_height = rand() % (jump_max - jump_min + 1)
-                    + jump_min;
+            // calculate random jump height
+            int jump_height = rand() % (jump_max - jump_min + 1)
+                + jump_min;
 
-                // display random jump height
-                cout << "Jump " << i + 1 << ": " << jump_height << " inches\n";
+            // display random jump height
+            cout << "Jump " << i + 1 << ": " << jump_height << " inches\n";
 
-            } // for
-        }
+        } // for
     }
 
     cout << "\nGoodbye!\n";
