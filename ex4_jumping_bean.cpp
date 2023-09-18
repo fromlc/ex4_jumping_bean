@@ -36,7 +36,7 @@ int main()
         // base range for random numbers
         int jump_range = jump_max - jump_min + 1;
 
-        // loop to jump constant times
+        // loop to jump number_of_jumps times
 
         // ***** Your for loop goes here *****
 
