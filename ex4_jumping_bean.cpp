@@ -37,16 +37,9 @@ int main()
         int jump_range = jump_max - jump_min + 1;
 
         // loop to jump constant times
-        for (int i = 0; i < number_of_jumps; i++)
-        {
-            // calculate random jump height
-            int jump_height = rand() % jump_range;
-            jump_height += jump_min;
 
-            // display random jump height
-            cout << "Jump " << i + 1 << ": " << jump_height << " inches\n";
+        // ***** Your for loop goes here *****
 
-        } // for
     }
 
     cout << "\nGoodbye!\n";
